@@ -1,3 +1,6 @@
+using MySql.Data.MySqlClient;
+using System.Data;
+
 namespace SongFinder
 {
     public class Program
@@ -8,6 +11,16 @@ namespace SongFinder
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+
+            builder.Services.AddScoped<IDbConnection>((s) =>
+            {
+                IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("songfinder"));
+                conn.Open();
+                return conn;
+            });
+
+            builder.Services.AddTransient<ISongRepository, SongRepository>();
 
             var app = builder.Build();
 

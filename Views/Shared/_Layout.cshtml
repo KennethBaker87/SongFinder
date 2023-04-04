@@ -23,8 +23,18 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Song" asp-action="Index">Songs</a>
                         </li>
+                        <li class="nav-item">
+                            <form asp-controller="Song" asp-action="Index">
+                                <span class="btn-group">
+                                    <input class="form-control" type="text" name="searchText"
+                                        placeholder="Artist or Song Name" />
+                                    <input class="p-1 m1-2 btn btn-sm btn-info" type="submit" value="Search" />
+                                </span>
+                            </form>
+                        </li>
+
                     </ul>
                 </div>
             </div>
