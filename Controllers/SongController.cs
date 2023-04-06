@@ -18,17 +18,24 @@ namespace SongFinder.Controllers
             if (searchText != "" && searchText != null)
             {
                 var songs = repo.GetAllSongs()
-                    .Where(p => p.SongName.Contains(searchText));
-                return View(songs);   
+                    .Where(p => p.Artist.Contains(searchText));
+                return View(songs); 
+               
             }
             else
             {
                 var songs = repo.GetAllSongs();
                 return View(songs);
             }
+
             
+
         }
-        
+        public IActionResult ViewSong(int id)
+        {
+            var song = repo.GetSong(id);
+            return View(song);
+        }
 
 
     }

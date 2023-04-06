@@ -1,0 +1,24 @@
+﻿@model Song
+
+<h3>@Model.SongName Information</h3>
+
+<table class="table">
+    <tr>
+        <th>Song Name</th>
+        <th>Artist</th>
+        <th>Album</th>
+        <th>Release Date</th>
+        <th>Track Number</th>
+        <th>Label</th>
+        <th>Producer</th>
+    </tr>
+    <tr>
+        <td>@Model.SongName</td>
+        <td>@Model.Artist</td>
+        <td>@Model.Album</td>
+        <td>@Model.ReleaseDate</td>
+        <td>@Model.TrackNumber</td>
+        <td>@Model.Label</td>
+        <td>@Model.Producer</td>
+    </tr>
+</table>

@@ -1,18 +1,50 @@
 html {
   font-size: 14px;
+
 }
 
 @media (min-width: 768px) {
   html {
     font-size: 16px;
+    
   }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+    
 }
 
 body {
   margin-bottom: 60px;
 }
+
+video {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    position: relative;
+    height: 5vh;
+    width: 100vh;
+    text-align: center;
+    justify-content: center;
+    color: aliceblue;
+    font-family: 'Trebuchet MS';
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0,0,0,0.5); 
+    border-radius: 20px;
+}
+
+nav {
+    z-index: 1;
+    
+}
+

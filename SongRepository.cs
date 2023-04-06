@@ -21,5 +21,9 @@ namespace SongFinder
         {
             return _conn.Query<Song>("Select * From songinfo Order By Artist ASC");
         }
+        public Song GetSong(int id)
+        {
+            return _conn.QuerySingle<Song>("SELECT * FROM songinfo WHERE ID = @id", new { id });
+        }
     }
 }
