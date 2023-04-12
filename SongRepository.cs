@@ -25,5 +25,14 @@ namespace SongFinder
         {
             return _conn.QuerySingle<Song>("SELECT * FROM songinfo WHERE ID = @id", new { id });
         }
+
+        public IEnumerable<Song> GetAllArtist(int id)
+        {
+            return _conn.Query<Song>("select distinct album, ReleaseDate, AlbumArt from songinfo WHERE ID = @id", new { id });
+        }
+        public IEnumerable<Song> GetAllAlbums(int id)
+        {
+            return _conn.Query<Song>("select * from songinfo where AlbumID = @id Order by TrackNumber", new { id });
+        }
     }
 }

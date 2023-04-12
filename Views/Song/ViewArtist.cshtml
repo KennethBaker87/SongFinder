@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Song>
+<h2>Albums by Artist</h2>
+<table class="table">
+ <tr>
+     <th>Albums</th>
+     <th>Release Date</th>
+     <th>Album Art</th>
+ </tr>
+ 
+@foreach (var artist in @Model)
+{
+    <tr>
+        <td>@artist.Album</td>
+        <td>@artist.ReleaseDate</td>
+        <td>@artist.AlbumArt</td>
+    </tr>
+}
+</table>

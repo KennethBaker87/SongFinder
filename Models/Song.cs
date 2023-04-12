@@ -11,5 +11,7 @@
         public string Label { get; set; }
         public string Producer { get; set; }
         public byte[] AlbumArt { get; set; }
+        public int ArtistID { get; set; }
+        public int AlbumID { get; set; }
     }
 }

@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "RsH1GDo+g1ARd3R3jjXC1FML/mqW3o2X1CFKoiMbvQtfUbCX2/9Z6zDiMBot9noslSUm8VKjCeSQMgjznZSDyA==",
+  "dgSpecHash": "qpuMdM5vUSZoiG321QBB/rJGmV0Vme+uOWclsVuyG6q3ctsiRR4e2ni89dJCMlM6WlumcGONcoXelglkvhVKUg==",
   "success": true,
   "projectFilePath": "C:\\Users\\kenny\\OneDrive\\Desktop\\Repos\\SongFinder\\SongFinder.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\kenny\\.nuget\\packages\\bootstrap.chosen\\1.0.0\\bootstrap.chosen.1.0.0.nupkg.sha512",
     "C:\\Users\\kenny\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\kenny\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
+    "C:\\Users\\kenny\\.nuget\\packages\\jquery\\1.6.4\\jquery.1.6.4.nupkg.sha512",
     "C:\\Users\\kenny\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",
     "C:\\Users\\kenny\\.nuget\\packages\\k4os.compression.lz4.streams\\1.2.6\\k4os.compression.lz4.streams.1.2.6.nupkg.sha512",
     "C:\\Users\\kenny\\.nuget\\packages\\k4os.hash.xxhash\\1.0.6\\k4os.hash.xxhash.1.0.6.nupkg.sha512",

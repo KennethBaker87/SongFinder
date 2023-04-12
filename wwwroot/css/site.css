@@ -18,6 +18,7 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: antiquewhite;
 }
 
 video {
@@ -31,12 +32,12 @@ video {
 
 .header {
     position: relative;
-    height: 5vh;
+    height: 4.5vh;
     width: 100vh;
     text-align: center;
     justify-content: center;
-    color: aliceblue;
-    font-family: 'Trebuchet MS';
+    color: antiquewhite;
+    font-family: 'Fugaz One';
     display: flex;
     justify-content: space-around;
     background: rgba(0,0,0,0.5); 
@@ -48,3 +49,35 @@ nav {
     
 }
 
+table {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Fugaz One';
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0,0,0,0.25);
+    border-radius: 20px;
+
+}
+h2 {
+    font-family: 'Fugaz One';
+    
+}
+
+h3 {
+    font-family: 'Fugaz One';
+}
+
+#button {
+    z-index: 1;
+    font-family: 'Fugaz One';
+    color: antiquewhite !important;
+    background: rgba(0,0,0,0.25) !important;
+}
+
+form {
+    z-index: 1;
+}

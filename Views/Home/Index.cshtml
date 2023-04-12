@@ -1,6 +1,8 @@
-﻿@{
+﻿@model IEnumerable<Song>
+@{
     ViewData["Title"] = "Home Page";
 }
+
 
 
   <video playsinline autoplay muted loop>
@@ -8,8 +10,45 @@
   </video>
 
 <div class="header">
-    <h1>Search for songs based on:</h1>
+    <h1>Search for music based on:</h1>
 </div>
+<br/>
+
+
+    <form>
+        <div class="d-grid gap-2">
+        <button id="button" class="btn btn-outline-light" asp-area="" asp-controller="Song" asp-act
+            ion="Index">Song
+        </button>
+    </div>
+    </form>
+
+    <br/>
+
+    <form>
+        <div class="d-grid gap-2">
+        <button id="button" class="btn btn-outline-light" asp-area="" asp-controller="Song" asp-act
+        ion="GetAllArtist">Artist
+        </button>
+    </div>
+    </form>
+
+    <br/>
+
+    <form>
+        <div class="d-grid gap-2">
+        <button id="button" class="btn btn-outline-light" asp-area="" asp-controller="Song" asp-act
+        ion="ViewAlbum">Album
+        </button>
+    </div>
+    </form>
+
+    <br/>
+
+
+    
+
+
 
 
 
