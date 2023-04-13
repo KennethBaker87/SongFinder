@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Song>
+
+<h2>Albums</h2>
+<table class="table">
+    <tr>
+        <th>Album</th>
+        <th>Artist</th>
+    </tr>
+
+    @foreach (var song in @Model)
+    {
+                <tr>
+                    <td><a href=/Song/ViewAlbum/@song.AlbumID>@song.Album</a></td>
+                    <td><a href=/Song/ViewArtistButton/@song.ArtistID>@song.Artist</a></td>
+                </tr>
+    }
+
+</table>

@@ -38,14 +38,28 @@ namespace SongFinder.Controllers
         }
         public IActionResult ViewArtist(int id)
         {
-            var song = repo.GetAllArtist(id);
+            var song = repo.GetArtist(id);
             return View(song);
         }
         public IActionResult ViewAlbum(int id)
         {
-            var song = repo.GetAllAlbums(id);
+            var song = repo.GetAlbums(id);
             return View(song);
         }
-
+        public IActionResult ViewAllArtist()
+        {
+            var song = repo.GetAllArtist();
+            return View(song);
+        }
+        public IActionResult ViewAllAlbum()
+        {
+            var song = repo.GetAllAlbum();
+            return View(song);
+        }
+        public IActionResult ViewArtistButton(int id)
+        {
+            var song = repo.GetArtistButton(id);
+            return View(song);
+        }
     }
 }
