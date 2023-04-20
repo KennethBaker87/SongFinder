@@ -1,8 +1,10 @@
 ﻿@model Song
 
-<h3>@Model.SongName Information</h3>
+<h3>Song Information</h3>
+<h4>Click on a song name to view songs of the same chord progression</h4>
 
 <table class="table">
+    
     <tr>
         <th>Song Name</th>
         <th>Artist</th>
@@ -12,13 +14,26 @@
         <th>Label</th>
         <th>Producer</th>
     </tr>
+    
+    
     <tr>
-        <td>@Model.SongName</td>
+        <td><a href=/Song/ViewSimilarSongs/@Model.ChordProgressionID>@Model.SongName</a></td>
         <td>@Model.Artist</td>
         <td>@Model.Album</td>
         <td>@Model.ReleaseDate</td>
         <td>@Model.TrackNumber</td>
         <td>@Model.Label</td>
         <td>@Model.Producer</td>
+    
     </tr>
+    
 </table>
+
+
+
+<form>
+    <div class="d-grid gap-2">
+        <a id="button" class="btn btn-outline-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+    </div>
+</form>
+<br/>

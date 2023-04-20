@@ -17,8 +17,11 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
-  background-color: antiquewhite;
+    
+    margin-bottom: 60px;
+    background-image: url('../images/guitar background 4.jpg');
+    background-size: cover;
+    
 }
 
 video {
@@ -50,6 +53,7 @@ nav {
 }
 
 table {
+
     position: relative;
     height: 100%;
     width: 100%;
@@ -58,26 +62,69 @@ table {
     font-family: 'Fugaz One';
     display: flex;
     justify-content: space-around;
-    background: rgba(0,0,0,0.25);
+    background: rgba(0,0,0,0.50);
     border-radius: 20px;
 
 }
 h2 {
     font-family: 'Fugaz One';
-    
+    color: antiquewhite;
+    text-align: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.50) !important;
+    border-radius: 20px;
 }
 
 h3 {
     font-family: 'Fugaz One';
+    color: antiquewhite;
+    text-align: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.50) !important;
+    border-radius: 20px;
+}
+
+h4 {
+    font-family: 'Fugaz One';
+    color: antiquewhite;
+    text-align: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.50) !important;
+    border-radius: 20px;
 }
 
 #button {
     z-index: 1;
     font-family: 'Fugaz One';
     color: antiquewhite !important;
-    background: rgba(0,0,0,0.25) !important;
+    background: rgba(0,0,0,0.50) !important;
 }
 
 form {
     z-index: 1;
+
+}
+
+td {
+    color: antiquewhite;
+}
+
+th {
+    color: antiquewhite;
+}
+
+a:link {
+    color:  aliceblue;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: aliceblue;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+searchbar {
+    
 }

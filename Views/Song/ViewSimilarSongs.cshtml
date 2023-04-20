@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Song>
+
+<h2>Similar Songs</h2>
+<table class="table">
+ <tr>
+     <th>Artist</th>
+     <th>Song Name</th>
+     <th>Album</th>
+     <th>Genre</th>
+     <th>Sub Genre</th>     
+     <th>Key</th>
+     <th>Tempo</th>
+     <th>Time Signature</th>
+ </tr>
+
+    @foreach (var artist in @Model)
+    {
+            <tr>
+                <td>@artist.Artist</td>
+            <td><a href=/Song/ViewSong/@artist.ID>@artist.SongName</a></td>
+                <td>@artist.Album</td>
+                <td>@artist.Genre</td>
+                <td>@artist.SubGenre</td>                
+                <td>@artist.Key</td>
+                <td>@artist.Tempo</td>
+                <td>@artist.TimeSignature</td>
+            </tr>
+    }
+
+</table>
+
+<form>
+    <div class="d-grid gap-2">
+        <a id="button" class="btn btn-outline-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+    </div>
+</form>

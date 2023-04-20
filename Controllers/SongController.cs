@@ -18,7 +18,7 @@ namespace SongFinder.Controllers
             if (searchText != "" && searchText != null)
             {
                 var songs = repo.GetAllSongs()
-                    .Where(p => p.Artist.Contains(searchText));
+                    .Where(p => p.SongName.Contains(searchText));
                 return View(songs); 
                
             }
@@ -33,6 +33,7 @@ namespace SongFinder.Controllers
         }
         public IActionResult ViewSong(int id)
         {
+
             var song = repo.GetSong(id);
             return View(song);
         }
@@ -59,6 +60,12 @@ namespace SongFinder.Controllers
         public IActionResult ViewArtistButton(int id)
         {
             var song = repo.GetArtistButton(id);
+            return View(song);
+        }
+
+        public IActionResult ViewSimilarSongs(int id)
+        {
+            var song = repo.GetSimilarSongs(id);
             return View(song);
         }
     }

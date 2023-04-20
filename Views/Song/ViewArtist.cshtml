@@ -11,10 +11,15 @@
 @foreach (var artist in @Model)
 {
     <tr>
-        <td>@artist.Album</td>
+        <td><a href=/Song/ViewAlbum/@artist.AlbumID>@artist.Album</a></td>
         <td>@artist.ReleaseDate</td>
         <td>@artist.AlbumArt</td>
     </tr>
 }
 
 </table>
+<form>
+    <div class="d-grid gap-2">
+        <a id="button" class="btn btn-outline-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+    </div>
+</form>

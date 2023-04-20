@@ -13,5 +13,12 @@
         public byte[] AlbumArt { get; set; }
         public int ArtistID { get; set; }
         public int AlbumID { get; set; }
+        public string ChordProgression { get; set; }
+        public string Key { get; set; }
+        public int Tempo { get; set; }
+        public string Genre { get; set; }
+        public string SubGenre { get; set; }
+        public string TimeSignature { get; set; }
+        public int ChordProgressionID { get; set; }
     }
 }

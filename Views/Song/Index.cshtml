@@ -1,5 +1,18 @@
 ﻿@model IEnumerable<Song>
 
+<div>
+     <form asp-controller="Song" asp-action="Index">
+        <span class="btn-group">
+            <input class="form-control" type="text" name="searchText"
+             placeholder="Search by Song" />
+             <input class="p-1 m1-2 btn btn-sm btn-info" type="submit" value="Search" />
+             </span>
+     </form>
+</div>
+<br/>
+
+
+
 <h2>Songs</h2>
 <table class="table">
     <tr>
@@ -16,15 +29,37 @@
     @foreach (var song in @Model)
     {
         <tr>
-            <td><a href=/Song/ViewSong/@song.ID>@song.SongName</a></td>
-            <td><a href=/Song/ViewArtist/@song.ID>@song.Artist</a></td>
-            <td><a href=/Song/ViewAlbum/@song.AlbumID>@song.Album</a></td>
-            <td>@song.ReleaseDate</td>
-            <td>@song.TrackNumber</td>
-            <td>@song.Label</td>
-            <td>@song.Producer</td>
-            <td>@song.AlbumArt</td>
+            @if (song.AlbumArt == null)
+            {
+                <td><a href=/Song/ViewSong/@song.ID>@song.SongName</a></td>
+                <td><a href=/Song/ViewArtist/@song.AlbumID>@song.Artist</a></td>
+                <td><a href=/Song/ViewAlbum/@song.AlbumID>@song.Album</a></td>
+                <td>@song.ReleaseDate</td>
+                <td>@song.TrackNumber</td>
+                <td>@song.Label</td>
+                <td>@song.Producer</td>
+                <td><img src="~/images/blank vinyltemp.webp" /></td>
+            }
+            else
+            {
+                var base64 = Convert.ToBase64String(song.AlbumArt);
+                var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+
+                <td><a href=/Song/ViewSong/@song.ID>@song.SongName</a></td>
+                <td><a href=/Song/ViewArtist/@song.AlbumID>@song.Artist</a></td>
+                <td><a href=/Song/ViewAlbum/@song.AlbumID>@song.Album</a></td>
+                <td>@song.ReleaseDate</td>
+                <td>@song.TrackNumber</td>
+                <td>@song.Label</td>
+                <td>@song.Producer</td>
+                <td><img src="@imgSrc" /></td>
+            }
         </tr>
     }
 
 </table>
+<form>
+    <div class="d-grid gap-2">
+        <a id="button" class="btn btn-outline-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+    </div>
+</form>

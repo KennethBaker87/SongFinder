@@ -28,7 +28,7 @@ namespace SongFinder
 
         public IEnumerable<Song> GetArtist(int id)
         {
-            return _conn.Query<Song>("select distinct album, ReleaseDate, artistid, AlbumArt from songinfo WHERE id = @id", new { id });
+            return _conn.Query<Song>("select distinct album, ReleaseDate, albumid, artistid, AlbumArt from songinfo WHERE Artistid = @id", new { id });
         }
         public IEnumerable<Song> GetAlbums(int id)
         {
@@ -45,6 +45,10 @@ namespace SongFinder
         public IEnumerable<Song> GetArtistButton(int id)
         {
             return _conn.Query<Song>("select distinct album, ReleaseDate, artistid, AlbumArt from songinfo WHERE artistid = @id", new { id });
+        }
+        public IEnumerable<Song> GetSimilarSongs(int id)
+        {
+            return _conn.Query<Song>("select * from songfinder.compareinfo where ChordProgressionID = @id", new { id });
         }
     }
 }

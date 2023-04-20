@@ -11,7 +11,7 @@ namespace SongFinder
         public IEnumerable<Song> GetAllArtist();
         public IEnumerable<Song> GetAllAlbum();
         public IEnumerable<Song> GetArtistButton(int id);
-
+        public IEnumerable<Song> GetSimilarSongs(int id);
 
     }
 
