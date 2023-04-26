@@ -66,6 +66,14 @@ table {
     border-radius: 20px;
 
 }
+h1 {
+    font-family: 'Fugaz One';
+    color: antiquewhite;
+    text-align: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.50) !important;
+    border-radius: 20px;
+}
 h2 {
     font-family: 'Fugaz One';
     color: antiquewhite;
@@ -125,6 +133,20 @@ a:visited {
     text-decoration: none;
 }
 
-searchbar {
+#username {
+    color: antiquewhite;
+    background: rgba(0,0,0,0.50) !important;
+    
+}
+
+#password {
+    color: antiquewhite;
+    background: rgba(0,0,0,0.50) !important;
+    
+}
+
+::placeholder {
+    color: antiquewhite;
+    opacity: 2;
     
 }

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
+
+
 namespace SongFinder.Controllers
 {
     public class SongController : Controller
@@ -17,8 +19,10 @@ namespace SongFinder.Controllers
             
             if (searchText != "" && searchText != null)
             {
+                
                 var songs = repo.GetAllSongs()
-                    .Where(p => p.SongName.Contains(searchText));
+                    .Where(p => p.SongName.ToLower().Contains(searchText.ToLower()));
+                
                 return View(songs); 
                
             }

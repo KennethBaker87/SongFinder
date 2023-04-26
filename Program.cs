@@ -1,5 +1,9 @@
 using MySql.Data.MySqlClient;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
+using SongFinder.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace SongFinder
 {
@@ -10,7 +14,16 @@ namespace SongFinder
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            /*builder.Services.AddDbContext<ApplicationDbContext>(e =>
+            e.UseSqlServer(builder.Configuration.GetConnectionString("songfinder")));
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();*/
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(option => {
+                    option.LoginPath = "/Access/Login";
+                    option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+                });
 
 
             builder.Services.AddScoped<IDbConnection>((s) =>
@@ -37,11 +50,13 @@ namespace SongFinder
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseAuthorization();
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Access}/{action=Login}/{id?}");
 
             app.Run();
         }
