@@ -1,6 +1,7 @@
 html {
-  font-size: 14px;
-
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -10,11 +11,7 @@ html {
   }
 }
 
-html {
-    position: relative;
-    min-height: 100%;
-    
-}
+
 
 body {
     
@@ -49,7 +46,6 @@ video {
 
 nav {
     z-index: 1;
-    
 }
 
 table {
@@ -101,11 +97,13 @@ h4 {
     border-radius: 20px;
 }
 
+
 #button {
     z-index: 1;
     font-family: 'Fugaz One';
     color: antiquewhite !important;
     background: rgba(0,0,0,0.50) !important;
+    
 }
 
 form {
@@ -134,15 +132,15 @@ a:visited {
 }
 
 #username {
+    font-family: 'Fugaz One';
     color: antiquewhite;
     background: rgba(0,0,0,0.50) !important;
-    
 }
 
 #password {
+    font-family: 'Fugaz One';
     color: antiquewhite;
     background: rgba(0,0,0,0.50) !important;
-    
 }
 
 ::placeholder {
@@ -150,3 +148,15 @@ a:visited {
     opacity: 2;
     
 }
+
+#titles {
+    font-family: 'Fugaz One';
+    color: antiquewhite;
+    text-align: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.50) !important;
+    border-radius: 20px;
+}
+
+
+

@@ -44,6 +44,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29uZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/kenny/OneDrive/Desktop/Repos/SongFinder/Views/Song/InsertSong.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29uZ1xJbnNlcnRTb25nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kenny/OneDrive/Desktop/Repos/SongFinder/Views/Song/UpdateSong.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29uZ1xVcGRhdGVTb25nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/kenny/OneDrive/Desktop/Repos/SongFinder/Views/Song/ViewAlbum.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU29uZ1xWaWV3QWxidW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

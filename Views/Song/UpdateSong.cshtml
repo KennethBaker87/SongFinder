@@ -1,0 +1,40 @@
+﻿@model Song
+
+<h2>Update @Model.SongName</h2>
+
+@using (Html.BeginForm("UpdateSongToDatabase", "Song", "Post"))
+{
+        <input asp-for="ID" type="hidden" value="@Model.ID" />
+
+        <label id="titles" asp-for="SongName" class="control-label">Song Name</label>   
+        <input id="password" type="text" name="SongName" class="form-control" value="@Model.SongName" />
+        <br />
+        <br />
+        <br />
+        <label id="titles" asp-for="Artist" class="control-label">Artist</label>
+        <input id="password" type="text" name="Artist" class="form-control" value="@Model.Artist" />
+        <br />
+        <br />
+        <br />
+        <label id="titles" asp-for="Album" class="control-label">Album</label>
+        <input id="password" type="text" name="Album" class="form-control" value="@Model.Album" />
+        <br />
+        <br />
+        <br />
+        <label id="titles" asp-for="ReleaseDate" class="control-label">Release Date</label>
+        <input id="password" type="text" name="ReleaseDate" class="form-control" value="@Model.ReleaseDate" />
+        <br />
+        <br />
+        <br />
+        <label id="titles" asp-for="TrackNumber" class="control-label">Track Number</label>
+        <input id="password"type="number" step="1" name="TrackNumber" class="form-control" value="@Model.TrackNumber" />
+        <br />
+        <br />
+        <br />
+        <label id="titles" asp-for="Producer" class="control-label">Producer</label>
+        <input id="password" type="text" name="Producer" class="form-control" value="@Model.Producer" />
+        <br />
+        <br />
+
+        <input id="button" type="submit" value="Update Song" class="btn" />
+}

@@ -11,9 +11,22 @@
     @foreach (var artist in @Model)
     {
         <tr>
-            <td>@artist.Album</td>
-            <td>@artist.ReleaseDate</td>
-            <td>@artist.AlbumArt</td>
+            @if (artist.AlbumArt == null)
+            {
+                <td>@artist.Album</td>
+                <td>@artist.ReleaseDate</td>
+                <td><img src="~/images/blank vinyltemp.png" /></td>
+            }
+            else
+            {
+                var base64 = Convert.ToBase64String(artist.AlbumArt);
+                var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+
+                <td>@artist.Album</td>
+                <td>@artist.ReleaseDate</td>
+                <td><img src="@imgSrc" /></td>
+            }
+
         </tr>
     }
 

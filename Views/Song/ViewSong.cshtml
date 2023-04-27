@@ -29,8 +29,18 @@
     
 </table>
 
+<div  class="btn-group" role="group" aria-label="Basic example">
 
+    <a id="button" class="btn btn-outline-light" href="/Song/UpdateSong/@Model.ID">Update this Song</a>
+    @using (Html.BeginForm("DeleteSong", "Song", "Post"))
+    {
+        <input type="hidden" asp-for="ID" value="@Model.ID" />
+        <input id="button" class="btn btn-outline-light" type="submit" onclick="return confirm('Are you sure?')" value="Delete this product" />
+    }
+</div>
 
+<br />
+<br />
 <form>
     <div class="d-grid gap-2">
         <a id="button" class="btn btn-outline-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>

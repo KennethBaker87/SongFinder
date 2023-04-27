@@ -50,5 +50,33 @@ namespace SongFinder
         {
             return _conn.Query<Song>("select * from songfinder.compareinfo where ChordProgressionID = @id", new { id });
         }
+        public void UpdateSong(Song song)
+        {
+            _conn.Execute("UPDATE songinfo SET SongName = @SongName, Artist = @Artist, Album = @Album, ReleaseDate = @ReleaseDate," +
+                "TrackNumber = @TrackNumber, Producer = @Producer WHERE ID = @id",
+             new { SongName = song.SongName, Artist = song.Artist, Album = song.Album, ReleaseDate = song.ReleaseDate, 
+                 TrackNumber = song.TrackNumber, Producer = song.Producer, id = song.ID });
+        }
+        public void InsertSong(Song songToInsert)
+        {
+            _conn.Execute("INSERT INTO songinfo (SongName, Artist, ID) VALUES (@SongName, @Artist, @ID);",
+                new { SongName = songToInsert.SongName, Artist = songToInsert.Artist, ID = songToInsert.ID });
+        }
+        public IEnumerable<Category> GetSongInfo()
+        {
+            return _conn.Query<Category>("SELECT * FROM SongInfo;");
+        }
+        public Song AssignSongInfo()
+        {
+            var songInfoList = GetSongInfo();
+            var song = new Song();
+            song.Categories = songInfoList;
+            return song;
+        }
+        public void DeleteSong(Song song)
+        {
+            _conn.Execute("DELETE FROM songinfo WHERE ID = @id;", new { id = song.ID });
+            
+        }
     }
 }

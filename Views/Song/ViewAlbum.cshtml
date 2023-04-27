@@ -13,11 +13,26 @@
     @foreach (var artist in @Model)
     {
         <tr>
-            <td><a href=/Song/ViewArtist/@artist.ID>@artist.Artist</a></td>
-            <td>@artist.Album</td>
-            <td>@artist.TrackNumber</td>
-            <td><a href=/Song/ViewSong/@artist.ID>@artist.SongName</a></td>
-            <td>@artist.AlbumArt</td>
+            @if (artist.AlbumArt == null)
+            {
+                <td><a href=/Song/ViewArtist/@artist.ID>@artist.Artist</a></td>
+                <td>@artist.Album</td>
+                <td>@artist.TrackNumber</td>
+                <td><a href=/Song/ViewSong/@artist.ID>@artist.SongName</a></td>
+                <td><img src="~/images/blank vinyltemp.png" /></td>
+            }
+            else
+            {
+                var base64 = Convert.ToBase64String(artist.AlbumArt);
+                var imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+
+                <td><a href=/Song/ViewArtist/@artist.ID>@artist.Artist</a></td>
+                <td>@artist.Album</td>
+                <td>@artist.TrackNumber</td>
+                <td><a href=/Song/ViewSong/@artist.ID>@artist.SongName</a></td>
+                <td><img src="@imgSrc" /></td>
+            }
+
         </tr>
     }
 

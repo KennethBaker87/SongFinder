@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SongFinder.Models;
 using System.Linq;
 
 
@@ -71,6 +72,36 @@ namespace SongFinder.Controllers
         {
             var song = repo.GetSimilarSongs(id);
             return View(song);
+        }
+        public IActionResult UpdateSong(int id)
+        {
+            Song song = repo.GetSong(id);
+            if (song == null)
+            {
+                return View("SongNotFound");
+            }
+            return View(song);
+        }
+        public IActionResult UpdateSongToDatabase(Song song)
+        {
+            repo.UpdateSong(song);
+
+            return RedirectToAction("ViewSong", new { id = song.ID });
+        }
+        public IActionResult InsertSong()
+        {
+            var song = repo.AssignSongInfo();
+            return View(song);
+        }
+        public IActionResult InsertSongToDatabase(Song songToInsert)
+        {
+            repo.InsertSong(songToInsert);
+            return RedirectToAction("Index");
+        }
+        public IActionResult DeleteSong(Song song)
+        {
+            repo.DeleteSong(song);
+            return RedirectToAction("Index");
         }
     }
 }

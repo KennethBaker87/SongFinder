@@ -20,5 +20,6 @@
         public string SubGenre { get; set; }
         public string TimeSignature { get; set; }
         public int ChordProgressionID { get; set; }
+        public IEnumerable<Category> Categories { get; set; }
     }
 }
